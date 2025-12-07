@@ -190,14 +190,14 @@ const Portfolio = () => {
 
   const handleDownloadResume = async () => {
     try {
-      const response = await fetch('/Atul_Resume.html');
+      const response = await fetch('/Atul_Resume.pdf');
       if (!response.ok) throw new Error('Failed to download resume');
-      
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Atul_Resume.html';
+      link.download = 'Atul_Resume.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
